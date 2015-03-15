@@ -12,14 +12,6 @@ table {
   border-collapse: collapse;
 }
 
-table#todo {
-  width: 40%;
-}
-
-table#staff {
-  width: 34%;
-}
-
 th, td {
   padding: 4px;
 }

@@ -15,11 +15,9 @@ function makeAllTablesSortable(tables) {
     // get all table heads
     var tHeads = tables[i].tHead.getElementsByTagName("th");
     setTableHeadStyle(tHeads);
-    // add a click event listener for each head in each table
     for (var j = 0; j < tHeads.length; j++) {
       makeTableHeadClickable(tHeads[j], tables[i], j);
     }
-    //setAlternateRows(tables[i]);
   }
 }
 
@@ -91,14 +89,3 @@ function sortTable(table, col, isAscending) {
   }
 }
 
-function setAlternateRows(table) {
-  // change all even indexed, non-head rows with specified class name
-  var tBodies = table.rows;
-  for (var i = 1; i < tBodies.length; i++) {
-    if (i % 2 == 0) {
-      tBodies[i].className = "alternate";
-    } else {
-      tBodies[i].className = "";
-    }
-  }
-}
