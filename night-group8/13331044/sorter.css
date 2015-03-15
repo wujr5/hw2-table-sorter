@@ -39,6 +39,6 @@ th:hover {
 	background-repeat: no-repeat;
 }
 
-.even {
+tr:nth-child(even) {
 	background-color: #D3D3D3;
 }
