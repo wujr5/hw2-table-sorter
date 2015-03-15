@@ -17,11 +17,7 @@ function makeAllTablesSortable(tables) {
     	thead[i].onmouseover = mouse_on;
     	thead[i].onmouseout=mouse_out;
     }
-}
-function mouse_out() {                                     //mouseout: change background color!
-    this.style.backgroundColor = "DarkBlue";               //also remove the child element img!
-    if (this.childNodes.length > 1) this.removeChild(this.lastChild);
-}
+}                                                    
 function mouse_on() {                                      //mouseout: change background color!
     this.style.backgroundColor = "LightBlue";
     var p = this.parentNode.childNodes;
@@ -47,6 +43,13 @@ function mouse_on() {                                      //mouseout: change ba
             }
         }
     }
+}
+function mouse_out() {                                     //mouseout: change background color!
+    this.style.backgroundColor = "DarkBlue";               //also remove the child element img!
+    var siblings = this.parentNode.childNodes;
+    for (var i = 0; i < (siblings.length - 1)/2; i++) {    //remove the other thead column's img! 
+        if (siblings[2*i + 1] != this && (siblings[2*i + 1].childNodes.length > 1)) siblings[2*i + 1].removeChild(siblings[2*i + 1].lastChild);
+    }                                                      //after reviewing, i change here so as to fix the bug on user interface!
 }
 function sort_table(parentTable, column, mode) {           //parentTable is the table node! column is the Column to sort by;mode stands for ascend or descend! 
     var array = [];
