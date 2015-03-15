@@ -10,18 +10,6 @@ function getAllTables() {
 function makeAllTablesSortable(tables) {
 	for (var i = 0; i < tables.length; i++) {
 		makeTableSortable(tables[i]);
-		printTable(tables[i]);
-	}
-}
-
-function printTable(table) {
-	var trs = table.getElementsByTagName("tr");
-
-	for (var i = 1; i < trs.length; i++) {
-		trs[i].className = trs[i].className.replace(/even|odd/, "");
-		if (i % 2) 
-			trs[i].className += " odd";
-		else trs[i].className += " even";
 	}
 }
 
